@@ -52,21 +52,40 @@
       </li>
     </ul>
 
-<script>
-  let getRandomNumber = function () {
-    let getRandom = Math.floor((Math.random() * 12))
-  }
 
-  var number = prompt("Select a Number")
 
-  var yes = prompt("Did you select the correct number?")
-  if (yes == "yes")
-  {
-  document.write("Yay! Play Again?")
-  }
-  document.write("Sorry You Lost")
+  <script type="text/javascript">
+      var card1Image;
+      var card2Image;
+      var card3Image;
+      var card4Image;
+      var card5Image;
+      var card6Image;
 
-</script>
+      function start(){
+          var button = document.getElementById("startButton");
+          button.addEventListener("click", pickCards, false);
+          card1Image = document.getElementById("card1");
+          card2Image = document.getElementById("card2");
+          card3Image = document.getElementById("card3");
+          card4Image = document.getElementById("card4");
+          card5Image = document.getElementById("card5");
+          card6Image = document.getElementById("card6");
+      }
+      function pickCards(){
+          setImage(card1Image);
+          setImage(card2Image);
+          setImage(card3Image);
+          setImage(card4Image);
+          setImage(card5Image);
+          setImage(card6Image);
+      }
+      function setImage(cardImg){
+          var cardValue = Math.floor(1 + Math.random() * 52);
+          cardImg.setAttribute("src", "C:/Users/Robert/Desktop/cards/" + cardValue + ".gif");
+      }
+      window.addEventListener("load", start, false);
+  </script>
 
 
   </body>
